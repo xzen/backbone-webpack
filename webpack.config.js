@@ -23,15 +23,26 @@ module.exports = {
         test: /\.js$/,
         exclude: /node_modules/,
         use: [
-            {loader :'babel-loader'},
-            {loader :'eslint-loader',
-              options: {
-                failOnError: true,
-              }
+          {loader :'babel-loader'},
+          {loader :'eslint-loader',
+            options: {
+              failOnError: true,
             }
-          ]
+          }
+        ]
       },
-
+      {
+        test: /\.tpl$/,
+        exclude: /node_modules/,
+        use: [
+          {
+            loader :'html-loader',
+            options: {
+              minimize: true
+            }
+          }
+        ]
+      },
       {
         test: /\.(sc|sa|c)ss$/,
         use: [
