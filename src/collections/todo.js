@@ -18,6 +18,11 @@ var Todo = Backbone.Collection.extend({
     var model = this.get({id});
 
     model.set(item);
+  },
+  'removeTask': function removeTask (id) {
+    var model = this.get({id});
+
+    this.remove(model);
   }
 });
 
