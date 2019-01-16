@@ -9,28 +9,16 @@ var Todo = Backbone.Collection.extend({
   'model': Task,
   'addTask': function addTask (item) {
     this.add({
-      'name': item.name,
+      'id': Math.floor(Math.random() * new Date().getTime()),
+      'name': item.name || 'no name',
       'checked': item.checked || false
     });
+  },
+  'updateTask': function updateTask (id, item) {
+    var model = this.get({id});
+
+    model.set(item);
   }
 });
 
-// Api response
-var response = [{
-  'name': 'task1',
-  'checked': false
-}, {
-  'name': 'task2',
-  'checked': false
-}, {
-  'name': 'task3',
-  'checked': false
-}];
-
-var tasks = [];
-
-response.forEach(function taskLoop (task) {
-  tasks.push(new Task(task));
-});
-
-module.exports = new Todo(tasks);
+module.exports = new Todo();
