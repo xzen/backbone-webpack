@@ -1,5 +1,5 @@
 var template = require('ak-template');
-var Backbone = require('Backbone');
+var Backbone = require('backbone');
 
 require('./index.scss');
 
@@ -32,7 +32,6 @@ module.exports = Backbone.View.extend({
     return this;
   },
   'removeTask': function removeTask (e) {
-    console.log(e);
     this.collection.removeTask(e.target.parentElement.dataset.id);
 
     return this;

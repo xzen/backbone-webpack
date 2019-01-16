@@ -1,5 +1,5 @@
 var template = require('ak-template');
-var Backbone = require('Backbone');
+var Backbone = require('backbone');
 
 var Input = require('./index.tpl');
 
